@@ -15,37 +15,72 @@
         <a href="home.html">Home</a>
         <a href="cadastro.html">Cadastro</a>
     </div>
-    <form action="POST">
-        <label for="nome">Nome da Empresa:</label>
-        <input type="text" id="nome">
+    <div class="container">
+        <div class="header">
+          <span>Cadastro de Empresas</span>
+          <button onclick="openModal()" id="new">Incluir</i></button>
+        </div>
 
-        <label for="dataFundacao">Data de Fundação:</label>
-        <input type="date" id="dataFundacao">
+        <!-- Grid do Cadastro -->
+        <div class="divTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Data Fund.</th>
+                <th>Núm. Func.</th>
+                <th>Reg. Brasil</th>
+                <th>Setor</th>
+                <th class="acao">Editar</th>
+                <th class="acao">Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
 
-        <label for="numeroFuncionarios">Número de Funcionários:</label>
-        <input type="number" id="numeroFuncionarios">
+        <!-- Model de cadastro -->
+        <div class="modal-container">
+          <div class="modal">
+            <form>
+                <label for="nome">Nome da Empresa:</label>
+                <input type="text" id="nome">
 
-        <label for="regiaoBrasil">Região do Brasil:</label>
-        <select name="regiaoBrasil" id="regiaoBrasil">
-            <option value="sul">Sul</option>
-            <option value="sudeste">Sudeste</option>
-            <option value="centro-oeste">Centro-Oeste</option>
-            <option value="norte">Norte</option>
-            <option value="nordeste">Nordeste</option>
-        </select>
+                <label for="dataFundacao">Data de Fundação:</label>
+                <input type="date" id="dataFundacao">
 
-        <label for="setorAtuacao">Setor de Atuação</label>
-        <select name="setorAtuacao" id="setorAtuacao">
-            <option value="industrial">Industrial</option>
-            <option value="varejo">Varejo</option>
-            <option value="servicos">Serviços</option>
-            <option value="agricola">Agrícola</option>
-        </select>
+                <label for="numeroFuncionarios">Número de Funcionários:</label>
+                <input type="number" id="numeroFuncionarios">
 
-        <button type="submit">Cadastrar</button>
-    </form>
+                <label for="regiaoBrasil">Região do Brasil:</label>
+                <select name="regiaoBrasil" id="regiaoBrasil">
+                    <option value="sul">Sul</option>
+                    <option value="sudeste">Sudeste</option>
+                    <option value="centro-oeste">Centro-Oeste</option>
+                    <option value="norte">Norte</option>
+                    <option value="nordeste">Nordeste</option>
+                </select>
+
+                <label for="setorAtuacao">Setor de Atuação</label>
+                <select name="setorAtuacao" id="setorAtuacao">
+                    <option value="industrial">Industrial</option>
+                    <option value="varejo">Varejo</option>
+                    <option value="servicos">Serviços</option>
+                    <option value="agricola">Agrícola</option>
+                </select>
+
+                <button type="submit" id="save">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+
+    </div>
+    <!-- Scripts de conexão com o supabase -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="./scripts/client.js"></script>
-    <script src="./scripts/aplicacao.js"></script>
+
+    <!-- Script com os metodos necessarios na aba de cadastros -->
+    <script src="./scripts/cadastro.js"></script>
 </body>
 </html>
