@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>CRUD</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
     <div class="container">
         <div class="header">
           <span>Cadastro de Empresas</span>
-          <button onclick="openModal()" id="new">Incluir</i></button>
+          <button onclick="abrirModal()" id="new">Incluir</i></button>
         </div>
 
         <!-- Grid do Cadastro -->
@@ -26,16 +27,16 @@
           <table>
             <thead>
               <tr>
-                <th>Nome</th>
-                <th>Data Fund.</th>
-                <th>Núm. Func.</th>
-                <th>Reg. Brasil</th>
-                <th>Setor</th>
-                <th class="acao">Editar</th>
-                <th class="acao">Excluir</th>
+                <th style="width: 25%;">Nome</th>
+                <th style="width: 12,5%">Data Fund.</th>
+                <th style="width: 12,5%">Núm. Func.</th>
+                <th style="width: 12,5%">Reg. Brasil</th>
+                <th style="width: 12,5%">Setor</th>
+                <th>Editar</th>
+                <th>Excluir</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="bodyConsulta">
             </tbody>
           </table>
         </div>
