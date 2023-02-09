@@ -19,7 +19,7 @@
     <div class="container">
         <div class="header">
           <span>Cadastro de Empresas</span>
-          <button onclick="abrirModal()" id="new">Incluir</i></button>
+          <button onclick="abrirModalCadastrar()" id="new">Incluir</i></button>
         </div>
 
         <!-- Grid do Cadastro -->
@@ -27,6 +27,7 @@
           <table>
             <thead>
               <tr>
+                <th>ID</th>
                 <th style="width: 25%;">Nome</th>
                 <th style="width: 12,5%">Data Fund.</th>
                 <th style="width: 12,5%">Núm. Func.</th>
@@ -42,7 +43,7 @@
         </div>
 
         <!-- Model de cadastro -->
-        <div class="modal-container">
+        <div class="modal-container" id="cadastrar">
           <div class="modal">
             <form>
                 <label for="nome">Nome da Empresa:</label>
@@ -75,6 +76,43 @@
             </form>
           </div>
         </div>
+
+        <!-- Model de editar cadastro -->
+        <div class="modal-container" id="editar">
+          <div class="modal">
+            <form>
+                <input type="hidden" name="id" id="editID" class="form-control">
+                <label for="editNome">Nome da Empresa:</label>
+                <input type="text" id="editNome">
+
+                <label for="editDataFundacao">Data de Fundação:</label>
+                <input type="date" id="editDataFundacao">
+
+                <label for="editNumeroFuncionarios">Número de Funcionários:</label>
+                <input type="number" id="editNumeroFuncionarios">
+
+                <label for="editRegiaoBrasil">Região do Brasil:</label>
+                <select name="regiaoBrasil" id="editRegiaoBrasil">
+                    <option value="sul">Sul</option>
+                    <option value="sudeste">Sudeste</option>
+                    <option value="centro-oeste">Centro-Oeste</option>
+                    <option value="norte">Norte</option>
+                    <option value="nordeste">Nordeste</option>
+                </select>
+
+                <label for="editSetorAtuacao">Setor de Atuação</label>
+                <select name="setorAtuacao" id="editSetorAtuacao">
+                    <option value="industrial">Industrial</option>
+                    <option value="varejo">Varejo</option>
+                    <option value="servicos">Serviços</option>
+                    <option value="agricola">Agrícola</option>
+                </select>
+
+                <button type="submit" id="edit">Editar</button>
+            </form>
+          </div>
+        </div>
+
 
     </div>
     <!-- Scripts de conexão com o supabase -->
