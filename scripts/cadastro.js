@@ -61,6 +61,17 @@ const abrirModalEditar = async (id) => {
   }
 }
 
+const deletarEmpresa = async (id) => {
+  const res = await _supabase.from("Empresas").delete().eq("id", id)
+
+  if (res) {
+      alert("Registro Removido com Sucesso!")
+      recarregaTelaConsulta();
+  } else {
+      alert("Não foi possivel remover o registro")
+  }
+}
+
 // Função que busca os registros cadastrados
 const recarregaTelaConsulta = async () => {
   let tbody = document.getElementById('bodyConsulta')
@@ -77,7 +88,7 @@ const recarregaTelaConsulta = async () => {
       <td>${res.data[i].numeroFuncionarios}</td>
       <td>${res.data[i].regiaoBrasil}</td>
       <td>${res.data[i].setorAtuacao}</td>
-      <td><button style:"padding-left: 20px;" onclick='abrirModalEditar(${res.data[i].id})' data-bs-target="#editModel"><i class='bx bx-edit' ></button></td>
+      <td><button style:"padding-left: 20px;" onclick='abrirModalEditar(${res.data[i].id})'><i class='bx bx-edit' ></button></td>
       <td><button onclick='deletarEmpresa(${res.data[i].id})'><i class='bx bx-trash' ></button></td>
       </tr>`;
     }
