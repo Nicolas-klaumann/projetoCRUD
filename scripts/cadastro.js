@@ -115,7 +115,7 @@ save.addEventListener('click', async (e) => {
     if (res) {
         alert('Empresa cadastrada com sucesso!')
         save.innerText = 'Cadastrar';
-        save.setAttribute("disabled", false);
+        save.removeAttribute("disabled");
 
         // Recarrega a consulta após o cadastro
         recarregaTelaConsulta();
@@ -131,7 +131,7 @@ save.addEventListener('click', async (e) => {
     } else {
         alert("Falha ao cadastrar empresa!")
         save.innerText = "Cadastrar"
-        save.setAttribute("disabled", false);
+        save.removeAttribute("disabled");
     }
 });
 
@@ -165,7 +165,7 @@ edit.addEventListener('click', async (e) => {
   if (res) {
       alert('Empresa alterada com sucesso!')
       edit.innerText = 'Editar';
-      edit.setAttribute("disabled", false);
+      save.removeAttribute("disabled");
 
       // Recarrega a consulta após o cadastro
       recarregaTelaConsulta();
@@ -174,7 +174,7 @@ edit.addEventListener('click', async (e) => {
   } else {
       alert("Falha ao alterar empresa!")
       edit.innerText = "Editar"
-      edit.setAttribute("disabled", false);
+      save.removeAttribute("disabled");
   }
 });
 

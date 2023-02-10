@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./../styles/styleCadastrar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -13,13 +13,15 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="cadastro.html">Cadastro</a>
+      <div class="links">
+        <a href="./home.html">Home</a>
+        <a href="./cadastro.html">Cadastro</a>
+      </div>
     </div>
     <div class="container">
         <div class="header">
           <span>Cadastro de Empresas</span>
-          <button onclick="abrirModalCadastrar()" id="new">Incluir</i></button>
+          <button onclick="abrirModalCadastrar()" id="new">Adicionar</i></button>
         </div>
 
         <!-- Grid do Cadastro -->
@@ -117,9 +119,9 @@
     </div>
     <!-- Scripts de conexão com o supabase -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script src="./scripts/client.js"></script>
+    <script src="./../scripts/client.js"></script>
 
     <!-- Script com os metodos necessarios na aba de cadastros -->
-    <script src="./scripts/cadastro.js"></script>
+    <script src="./../scripts/cadastro.js"></script>
 </body>
 </html>

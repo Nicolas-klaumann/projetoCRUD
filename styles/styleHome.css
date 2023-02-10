@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: rgb(57, 57, 226);
+    width: 100%;
+    height: 75px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: inline-block;
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.links {
+    text-align: center;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
+}
+
+.cards {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.queryUm, .queryDois, .queryTres, .queryQuatro, .queryCinco {
+    width: 30%;
+    height: 500px;
+    margin: 20px;
+    background-color: red;
+    border: 1px solid black;
+}
