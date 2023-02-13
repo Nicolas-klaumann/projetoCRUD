@@ -6,10 +6,11 @@ const regiao_industrial = document.querySelector('.regiao_industrial');
 const regiaoNumeroFuncionarios = document.querySelector('.regiaoNumeroFuncionarios');
 
 const queryUm = async () => {
-    const res = await _supabase.rpc('consulta_regiao_funcionarios');
+    const resNomeRegiao = await _supabase.rpc('consulta_nome_regiao_funcionarios');
+    const resNumeroRegiao = await _supabase.rpc('consulta_numero_regiao_funcionarios');
 
-    if (res) {
-        regiaoNumeroFuncionarios.innerHTML = `${res.data}`;
+    if (resNomeRegiao || resNumeroRegiao) {
+        regiaoNumeroFuncionarios.innerHTML = `${resNomeRegiao.data} - ${resNumeroRegiao.data}`;
     }
 }
 
