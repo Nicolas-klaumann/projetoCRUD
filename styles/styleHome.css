@@ -61,6 +61,13 @@ h2 {
     padding-top: 75px;
 }
 
+.queryUm p {
+    text-align: center;
+    padding-top: 90px;
+    font-size: 40px;
+    color: green;
+}
+
 .queryDois p {
     text-align: center;
     padding-top: 120px;
