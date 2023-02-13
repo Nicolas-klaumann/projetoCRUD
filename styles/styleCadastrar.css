@@ -20,6 +20,7 @@ a {
   text-decoration: none;
   color: #fff;
   transition: 0.3s;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 
 a:hover {

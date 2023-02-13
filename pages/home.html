@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +9,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <title>CRUD</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar">
-        <div class="links">
-            <a href="./home.html">Home</a>
-            <a href="./cadastro.html">Cadastro</a>
-        </div>
+      <div class="links">
+        <a href="./home.html">Home</a>
+        <a href="./cadastro.html">Cadastro</a>
+      </div>
     </div>
 
     <main>
-        <div class="introducao">
-            <h1>INFORMAÇÕES REFERENTE AS EMPRESAS CADASTRADAS</h1>
+      <div class="introducao">
+        <h1>INFORMAÇÕES REFERENTE AS EMPRESAS CADASTRADAS</h1>
+      </div>
+
+      <div class="cards">
+        <!-- a região com o maior numero de funcionarios  -->
+        <div class="queryUm">
+          <h2>REGIÃO COM O MAIOR NUMERO DE FUNCIONARIOS</h2>
+          <p class="regiaoNumeroFuncionarios"></p>
         </div>
 
-        <div class="cards">
-            <!-- a região com o maior numero de funcionarios  -->
-            <div class="queryUm">
-                <h2>REGIÃO COM O MAIOR NUMERO DE FUNCIONARIOS</h2>
-                <p class="regiaoNumeroFuncionarios"></p>
-            </div>
-
-            <!-- nome da empresa mais antiga -->
-            <div class="queryDois">
-                <h2>
-                    EMPRESA MAIS ANTIGA CADASTRADA
-                </h2>
-                <p class="empresa_mais_antiga"></p>
-            </div>
-
-            <!-- a região do brasil que tem o maior numero de empresas industriais -->
-            <div class="queryTres">
-                <h2>
-                    REGIÃO COM MAIOR NUMERO DE EMPRESAS DO SETOR INDUSTRIAL
-                </h2>
-                <p class="regiao_industrial"></p>
-            </div>
-
-            <!-- o numero de empresas em cada setor, de forma descrescente -->
-            <div class="queryQuatro">
-                <h2>
-                    EMPRESAS EM CADA SETOR
-                </h2>
-                <div class="total_setor"></div>
-            </div>
-
-            <!-- o numero total de funcionarios de todas as empresas -->
-            <div class="queryCinco">
-                <h2>
-                    NUMERO TOTAL DE FUNCIONARIOS CADASTRADOS
-                </h2>
-                <p class="total_funcionarios"></p>
-            </div>
+        <!-- nome da empresa mais antiga -->
+        <div class="queryDois">
+          <h2>EMPRESA MAIS ANTIGA CADASTRADA</h2>
+          <p class="empresa_mais_antiga"></p>
         </div>
+
+        <!-- a região do brasil que tem o maior numero de empresas industriais -->
+        <div class="queryTres">
+          <h2>REGIÃO COM MAIOR NUMERO DE EMPRESAS DO SETOR INDUSTRIAL</h2>
+          <p class="regiao_industrial"></p>
+        </div>
+
+        <!-- o numero de empresas em cada setor, de forma descrescente -->
+        <div class="queryQuatro">
+          <h2>EMPRESAS EM CADA SETOR</h2>
+          <div class="total_setor"></div>
+        </div>
+
+        <!-- o numero total de funcionarios de todas as empresas -->
+        <div class="queryCinco">
+          <h2>NUMERO TOTAL DE FUNCIONARIOS CADASTRADOS</h2>
+          <p class="total_funcionarios"></p>
+        </div>
+      </div>
     </main>
 
     <!-- Scripts de conexão com o supabase -->
@@ -69,5 +61,5 @@
     <script src="./../scripts/client.js"></script>
 
     <script src="./../scripts/home.js"></script>
-</body>
+  </body>
 </html>

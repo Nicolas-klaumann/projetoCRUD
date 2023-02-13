@@ -48,50 +48,60 @@ h1 {
     flex-wrap: wrap;
 }
 
-.queryUm, .queryDois, .queryTres, .queryQuatro, .queryCinco {
+.queryQuatro, .queryCinco {
     width: 30%;
-    height: 500px;
+    height: 350px;
     margin: 20px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 10px;
+}
+
+.queryUm, .queryDois, .queryTres {
+    width: 30%;
+    height: 250px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 10px;
 }
 
 h2 {
     text-align: center;
-    padding-top: 75px;
+    padding-top: 45px;
 }
 
 .queryUm p {
     text-align: center;
-    padding-top: 90px;
+    padding-top: 50px;
     font-size: 40px;
     color: green;
 }
 
 .queryDois p {
     text-align: center;
-    padding-top: 120px;
+    padding-top: 80px;
     font-size: 40px;
     color: blue;
 }
 
 .queryTres p {
     text-align: center;
-    padding-top: 90px;
+    padding-top: 55px;
     font-size: 40px;
     color: green;
 }
 
 .queryQuatro div {
     text-align: center;
-    padding-top: 120px;
-    font-size: 15px;
+    padding-top: 40px;
+    font-size: 25px;
     color: black;
 }
 
 .queryCinco p {
     text-align: center;
-    padding-top: 120px;
+    padding-top: 90px;
     font-size: 60px;
     color: green;
 }

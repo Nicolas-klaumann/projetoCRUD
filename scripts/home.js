@@ -1,35 +1,42 @@
-
+// Busca os campos em que os dados serão inseridos
 const total_funcionarios = document.querySelector('.total_funcionarios');
 const empresa_mais_antiga = document.querySelector('.empresa_mais_antiga');
 const total_setor = document.querySelector('.total_setor');
 const regiao_industrial = document.querySelector('.regiao_industrial');
 const regiaoNumeroFuncionarios = document.querySelector('.regiaoNumeroFuncionarios');
 
+// Nome da região do brasil que apresenta maior número de funcionários, e o número de funcionários
 const queryUm = async () => {
+    // busca o nome e a quantidade de funcionarios
     const resNomeRegiao = await _supabase.rpc('consulta_nome_regiao_funcionarios');
     const resNumeroRegiao = await _supabase.rpc('consulta_numero_regiao_funcionarios');
 
     if (resNomeRegiao || resNumeroRegiao) {
-        regiaoNumeroFuncionarios.innerHTML = `${resNomeRegiao.data} - ${resNumeroRegiao.data}`;
+        regiaoNumeroFuncionarios.innerHTML = `${resNomeRegiao.data.toUpperCase()} - ${parseInt(resNumeroRegiao.data)}`;
     }
 }
 
+// O nome da empresa mais antiga
 const queryDois = async () => {
+    // busca a empresa mais antiga
     const res = await _supabase.rpc('empresa_mais_antiga');
 
     if (res) {
-        empresa_mais_antiga.innerHTML = `${res.data}`
+        empresa_mais_antiga.innerHTML = `${res.data.toUpperCase()}`
     }
 }
 
+// A região do brasil que tem maior número de empresas do setor Industrial
 const queryTres = async () => {
+    // busca a região
     const res = await _supabase.rpc('consulta_regiao_industria');
 
     if (res) {
-        regiao_industrial.innerHTML = `${res.data}`;
+        regiao_industrial.innerHTML = `${res.data.toUpperCase()}`;
     }
 }
 
+// O número de empresas de cada setor de atuação em ordem decrescente
 const queryQuatro = async () => {
     // busca o total de cada setor
     const industrial = await _supabase.rpc('get_industrial');
@@ -44,6 +51,7 @@ const queryQuatro = async () => {
         ['AGRICOLA', agricola.data]
     ];
 
+    // organiza ele detro do array
     setores.sort()
     setores.reverse()
 
@@ -55,14 +63,17 @@ const queryQuatro = async () => {
     `
 }
 
+// O número total de funcionários de todas as empresas
 const queryCinco = async () => {
+    // busca o total de funcionarios
     const res = await _supabase.rpc('total_funcionarios');
     if(res) {
-        total_funcionarios.innerHTML = `${res.data}`
+        total_funcionarios.innerHTML = `${parseInt(res.data)}`
     }
 
 }
 
+// monta a tela com as consultas solicitadas
 const montaTela = async () => {
     queryUm();
     queryDois();
@@ -71,4 +82,4 @@ const montaTela = async () => {
     queryCinco();
 }
 
-montaTela()
+montaTela();
