@@ -2,13 +2,21 @@
 const total_funcionarios = document.querySelector('.total_funcionarios');
 const empresa_mais_antiga = document.querySelector('.empresa_mais_antiga');
 const total_setor = document.querySelector('.total_setor');
+const regiao_industrial = document.querySelector('.regiao_industrial');
 
 const queryDois = async () => {
     const res = await _supabase.rpc('empresa_mais_antiga');
 
     if (res) {
-        console.log(res.data);
         empresa_mais_antiga.innerHTML = `${res.data}`
+    }
+}
+
+const queryTres = async () => {
+    const res = await _supabase.rpc('consulta_regiao_industria');
+
+    if (res) {
+        regiao_industrial.innerHTML = `${res.data}`;
     }
 }
 
@@ -40,7 +48,6 @@ const queryQuatro = async () => {
 const queryCinco = async () => {
     const res = await _supabase.rpc('total_funcionarios');
     if(res) {
-        console.log(res.data);
         total_funcionarios.innerHTML = `${res.data}`
     }
 
@@ -48,6 +55,7 @@ const queryCinco = async () => {
 
 const montaTela = async () => {
     queryDois();
+    queryTres();
     queryQuatro();
     queryCinco();
 }

@@ -15,7 +15,6 @@ const edit = document.querySelector('#edit');
 
 // Função que abre o modalCadastrar
 function abrirModalCadastrar() {
-  console.log('chegou na função para abrir o modalCadastrar');
   //abre o modalCadastrar
   modalCadastrar.classList.add('active');
 
@@ -35,7 +34,6 @@ function abrirModalCadastrar() {
 
 // Função que edita um cadastro de empresa
 const abrirModalEditar = async (id) => {
-  console.log('abriu modal de editar');
 
   //abre o modalEditar
   modalEditar.classList.add('active');
@@ -98,7 +96,6 @@ const recarregaTelaConsulta = async () => {
 
 // Função que insere a empresa no banco de dados
 save.addEventListener('click', async (e) => {
-    console.log('evento de cadastrar');
     e.preventDefault();
     save.innerText = 'Cadastrando...';
     save.setAttribute('disabled', true);
@@ -137,13 +134,9 @@ save.addEventListener('click', async (e) => {
 
 // Função que edita a empresa no banco de dados
 edit.addEventListener('click', async (e) => {
-  console.log('evento de Editar');
   e.preventDefault();
   edit.innerText = 'Editando...';
   edit.setAttribute('disabled', true);
-
-  console.log(document.querySelector('#editID'));
-  console.log(document.querySelector('#editID').value);
 
   //atribui os dados para editar
   let id = document.querySelector('#editID').value;

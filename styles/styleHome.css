@@ -68,6 +68,13 @@ h2 {
     color: blue;
 }
 
+.queryTres p {
+    text-align: center;
+    padding-top: 90px;
+    font-size: 40px;
+    color: green;
+}
+
 .queryQuatro div {
     text-align: center;
     padding-top: 120px;
