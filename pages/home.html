@@ -20,18 +20,21 @@
 
     <main>
         <div class="introducao">
-            <h1>Informações referente as empresas cadastradas</h1>
+            <h1>INFORMAÇÕES REFERENTE AS EMPRESAS CADASTRADAS</h1>
         </div>
 
         <div class="cards">
-            <!-- card que apresenta a região com o maior numero de funcionarios  -->
+            <!-- a região com o maior numero de funcionarios  -->
             <div class="queryUm">
 
             </div>
 
             <!-- nome da empresa mais antiga -->
             <div class="queryDois">
-
+                <h2>
+                    EMPRESA MAIS ANTIGA CADASTRADA
+                </h2>
+                <p class="empresa_mais_antiga"></p>
             </div>
 
             <!-- a região do brasil que tem o maior numero de empresas industriais -->
@@ -41,17 +44,26 @@
 
             <!-- o numero de empresas em cada setor, de forma descrescente -->
             <div class="queryQuatro">
-
+                <h2>
+                    EMPRESAS EM CADA SETOR
+                </h2>
+                <div class="total_setor"></div>
             </div>
 
             <!-- o numero total de funcionarios de todas as empresas -->
             <div class="queryCinco">
-
+                <h2>
+                    NUMERO TOTAL DE FUNCIONARIOS CADASTRADOS
+                </h2>
+                <p class="total_funcionarios"></p>
             </div>
         </div>
     </main>
 
     <!-- Scripts de conexão com o supabase -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="./../scripts/client.js"></script>
+
+    <script src="./../scripts/home.js"></script>
 </body>
 </html>
