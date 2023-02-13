@@ -100,6 +100,22 @@ save.addEventListener('click', async (e) => {
     save.innerText = 'Cadastrando...';
     save.setAttribute('disabled', true);
 
+    // valida o nome e data
+    if (!nome.value || !dataFundacao.value) {
+      alert('É necessario preencher os campos de nome e data.')
+      save.innerText = 'Cadastrar';
+      save.removeAttribute("disabled");
+      return
+    }
+
+    // valida o numero de funcionarios
+    if (numeroFuncionarios.value < 0) {
+      alert('Quantidade invalida de funcionarios')
+      save.innerText = 'Cadastrar';
+      save.removeAttribute("disabled");
+      return
+    }
+
     // Inserção da empresa
     let res = await _supabase.from('Empresas').insert({
         nome: nome.value,

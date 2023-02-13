@@ -205,7 +205,7 @@ tbody tr td.acao {
   width: 100%;
 }
 
-.modal input {
+.modal input, select {
   width: 100%;
   outline: none;
   padding: 5px 10px;
