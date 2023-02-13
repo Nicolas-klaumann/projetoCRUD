@@ -13,6 +13,8 @@ const queryUm = async () => {
 
     if (resNomeRegiao || resNumeroRegiao) {
         regiaoNumeroFuncionarios.innerHTML = `${resNomeRegiao.data.toUpperCase()} - ${parseInt(resNumeroRegiao.data)}`;
+    } else {
+        regiaoNumeroFuncionarios.innerHTML = '---'
     }
 }
 
@@ -23,6 +25,8 @@ const queryDois = async () => {
 
     if (res) {
         empresa_mais_antiga.innerHTML = `${res.data.toUpperCase()}`
+    } else {
+        empresa_mais_antiga.innerHTML = '-'
     }
 }
 
@@ -33,6 +37,8 @@ const queryTres = async () => {
 
     if (res) {
         regiao_industrial.innerHTML = `${res.data.toUpperCase()}`;
+    } else {
+        regiao_industrial.innerHTML = '-'
     }
 }
 
@@ -45,21 +51,39 @@ const queryQuatro = async () => {
     const agricola = await _supabase.rpc('get_agricola');
 
     let setores = [
-        ['INDUSTRIAL', industrial.data],
-        ['VAREJO', varejo.data],
-        ['SERVIÇOS', servicos.data],
-        ['AGRICOLA', agricola.data]
+        {
+            setor: 'INDUSTRIAL',
+            empresas: industrial.data ? industrial.data : 0
+        },
+        {
+            setor: 'VAREJO',
+            empresas: varejo.data ? varejo.data : 0
+        },
+        {
+            setor: 'SERVIÇOS',
+            empresas: servicos.data ? servicos.data : 0
+        },
+        {
+            setor:'AGRICOLA',
+            empresas: agricola.data ? agricola.data : 0
+        }
     ];
 
-    // organiza ele detro do array
-    setores.sort()
-    setores.reverse()
+    setores.sort(function(a, b) {
+        if (a.empresas > b.empresas) {
+            return -1;
+        } else {
+            return true
+        }
+    })
+
+    console.log(setores);
 
     total_setor.innerHTML = `
-        <p>${setores[0][0]} - ${setores[0][1]} Empresas</p><br>
-        <p>${setores[1][0]} - ${setores[1][1]} Empresas</p><br>
-        <p>${setores[2][0]} - ${setores[2][1]} Empresas</p><br>
-        <p>${setores[3][0]} - ${setores[3][1]} Empresas</p><br>
+        <p>${setores[0].setor} - ${setores[0].empresas} Empresas</p><br>
+        <p>${setores[1].setor} - ${setores[1].empresas} Empresas</p><br>
+        <p>${setores[2].setor} - ${setores[2].empresas} Empresas</p><br>
+        <p>${setores[3].setor} - ${setores[3].empresas} Empresas</p><br>
     `
 }
 
@@ -69,6 +93,8 @@ const queryCinco = async () => {
     const res = await _supabase.rpc('total_funcionarios');
     if(res) {
         total_funcionarios.innerHTML = `${parseInt(res.data)}`
+    } else {
+        total_funcionarios.innerHTML = 0;
     }
 
 }

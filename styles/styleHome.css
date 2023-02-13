@@ -20,6 +20,7 @@ a {
     text-decoration: none;
     color: #fff;
     transition: 0.3s;
+    font-family: 'Ubuntu', sans-serif !important;
 }
 
 a:hover {
@@ -73,7 +74,7 @@ h2 {
 
 .queryUm p {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 45px;
     font-size: 40px;
     color: green;
 }
@@ -87,21 +88,21 @@ h2 {
 
 .queryTres p {
     text-align: center;
-    padding-top: 55px;
+    padding-top: 45px;
     font-size: 40px;
     color: green;
 }
 
 .queryQuatro div {
     text-align: center;
-    padding-top: 40px;
-    font-size: 25px;
+    padding-top: 20px;
+    font-size: 20px;
     color: black;
 }
 
 .queryCinco p {
     text-align: center;
-    padding-top: 90px;
-    font-size: 60px;
+    padding-top: 50px;
+    font-size: 80px;
     color: green;
 }
